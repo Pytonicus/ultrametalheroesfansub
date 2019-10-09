@@ -1,0 +1,143 @@
+body {
+    font-family: 'Titillium Web', sans-serif !important;
+    background-image: url('/static/img/fondo.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    font-size: 16px;
+}
+
+.container {
+    box-shadow: 0px 5px 10px #2F4858;
+}
+
+header {
+    background-image: url('/static/img/background.jpg');
+    background-repeat: no-repeat;
+    background-position: 0%;
+    background-position-y: 40%;
+}
+
+.background {
+    background: rgba(51, 51, 51, 0.4);
+    padding-top: 30px;
+    padding-bottom: 150px;
+}
+
+header h2 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+header h1 {
+    font-size: 50px;
+    font-weight: 900;
+}
+
+header h1,
+header h2 {
+    color: #F0F0f0;
+    text-shadow: 0px 5px 10px black;
+}
+
+navbar {
+    height: 50px;
+    background: #031926;
+    color: #FAFAFA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+}
+
+navbar a {
+    font-size: 14.5px;
+    padding: 0px 5px;
+}
+
+a {
+    color: #4B88A2;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #84A9C0;
+}
+
+main {
+    margin-top: -20px;
+    background: #2F4858;
+    color: #FAFAFA;
+}
+
+section {
+    margin-top: 20px;
+    padding: 20px 35px;
+}
+
+nav {
+    font-size: 16px;
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+article {
+    padding: 1px 35px;
+    background: #031926;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-size: 16px;
+    height: 50px;
+    background: #040F0F;
+    color: #FAFAFA;
+    margin: 0px -15px;
+}
+
+.captura img {
+    width: 80%;
+    margin: 15px 0px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 16px #040F0F;
+}
+
+.comentario {
+    margin: 20px 0px 20px 20px;
+}
+
+.contador {
+    padding-bottom: 20px;
+}
+
+form {
+    padding: 25px;
+}
+
+input,
+textarea {
+    border-radius: 5px;
+    background: #2F4858;
+    color: #040F0F;
+    border-color: #031926;
+}
+
+.poster {
+    max-height: 295px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 12px #031926;
+}
+
+.listado {
+    margin-bottom: 100px;
+}
+
+.serie {
+    margin-bottom: 25px;
+}

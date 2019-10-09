@@ -1,0 +1,7 @@
+{% extends 'estructura.html' %} {% block contenido %}
+
+<h1 class="text-center">Nuevo comentario</h1>
+<form method="POST" class="post-form">{% csrf_token %} {{ form.as_p }}
+    <button type="submit" class="save btn btn-default text-center">Enviar</button>
+</form>
+{% endblock %}

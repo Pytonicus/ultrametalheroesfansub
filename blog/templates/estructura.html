@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ultra Metal Heroes Fansub | Ultraman y Metal Heroes</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Rubik|Titillium+Web&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <header class="text-center row">
+            <div class="background col-md-12">
+                <h1>Ultra Metal Heroes Fansub</h1>
+                <h2>Ultraman y Metal Heroes entre otros héroes del sol naciente</h2>
+            </div>
+
+        </header>
+        <navbar class="row">
+            <div class="col-md-12">
+                <a href="{% url 'lista_entradas' %}">INICIO</a>
+                <a href="{% url 'series_activas' %}">SERIES EN PROCESO</a>
+                <a href="{% url 'series_terminadas' %}">SERIES TERMINADAS</a>
+            </div>
+
+        </navbar>
+        <main class="row">
+            {% block contenido %} {% endblock %}
+        </main>
+        <footer class="text-center">
+            <small>2019 Ultra Metal Heroes Fansub - Por fan y para fans | sitio desarrollado por With3G</small>
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+{% extends 'estructura.html' %} {% block contenido %}
+<section class="col-md-12">
+    {% for entrada in entradas %}
+    <article>
+        <h3><a href="{% url 'entrada' entrada.pk %}">{{entrada.titulo}}</a></h3>
+        <p>Publicado el: <time>{{entrada.fecha}}</time></p>
+        <p class="text-center">{{entrada.contenido | linebreaksbr }}</p>
+        <div class=" row captura text-center">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <img src="{{entrada.imagen.url}}" alt="{{entrada.titulo}}">
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <p><small>Por: {{entrada.autor}}</small> - <a href="{% url 'entrada' entrada.pk %}">comentarios: {{ entrada.comentarios.count }}</a></p>
+
+    </article>
+    {% endfor %}
+</section>
+<nav class="text-center">
+    {% if entradas.has_previous %}
+    <a href="?pagina={{entradas.previous_page_number}}"><i class="fa fa-arrow-left" aria-hidden="true"></i> </a> {% endif %} Página {{entradas.number }} de {{ entradas.paginator.num_pages }} {% if entradas.has_next %}
+    <a href="?pagina={{entradas.next_page_number}}"> <i class="fa fa-arrow-right" aria-hidden="true"></i></a> {% endif %}
+</nav>
+{% endblock %}

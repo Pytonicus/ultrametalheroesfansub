@@ -1,0 +1,35 @@
+{% extends 'estructura.html' %} {% block contenido %}
+<section class="col-md-12">
+    <article>
+        {% if entrada.fecha_publicacion %}
+        <div class="fecha">
+            Publicado el: {{entrada.fecha_publicacion}}
+        </div>
+        {% endif %}
+        <h1><a href="{% url 'entrada' entrada.pk %}">{{entrada.titulo}}</a></h1>
+        <p class="text-center">{{entrada.contenido | linebreaksbr }}</p>
+        <div class=" row captura text-center">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <img src="{{entrada.imagen.url}}" alt="{{entrada.titulo}}">
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <p class="text-center">{{entrada.informacion}}</p>
+        <p class="text-center"><a href="{{entrada.enlace}}">Descargar</a></p>
+        <p><small>por: {{entrada.autor}}</small></p>
+        <hr>
+        <h4>{{ entrada.comentarios.count }} Comentarios:</h4>
+        <p><a class="btn btn-default" href="{% url 'nuevo_comentario' entrada.pk %}">Comentar</a></p>
+        {% for comentario in entrada.comentarios.all %}{% if comentario.aprovado %}
+        <div class="comentario">
+            <div class="fecha">Publicado el: {{comentario.fecha_publicacion}}</div>
+            <p>Por: <strong>{{comentario.autor}}</strong></p>
+            <p>{{comentario.texto | linebreaks}}</p>
+        </div>
+        {% endif %} {% empty %}
+        <p>Esta entrada no tiene comentarios :(</p>
+        {% endfor %}
+    </article>
+</section>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'estructura.html' %} {% block contenido %}
+<h1 class="text-center">{{estado}}</h1>
+<br>
+<div class="listado row">
+    {% for serie in series %}
+    <div class="serie col-md-3 text-center">
+        <a href="">
+            <img class="poster" src="{{serie.poster.url}}" alt="{{serie.titulo}}">
+            <p>{{serie.titulo}}</p>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
