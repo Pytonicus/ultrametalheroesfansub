@@ -6,5 +6,6 @@ urlpatterns = [
     path('entrada/<int:pk>/', views.entrada, name='entrada'),
     path('entrada/<int:pk>/comentario/', views.nuevo_comentario, name="nuevo_comentario"),
     path('series/activas/', views.series_activas, name="series_activas"),
-    path('series/terminadas/', views.series_terminadas, name="series_terminadas")
+    path('series/terminadas/', views.series_terminadas, name="series_terminadas"),
+    path('series/serie/<int:pk>/', views.serie, name="serie")
 ]

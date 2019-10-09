@@ -48,3 +48,7 @@ def series_terminadas(request):
     series = Serie.objects.all().filter(activa = False).order_by("titulo")
     estado = "Series Terminadas"
     return render(request, 'series/listado.html', {'series': series, 'estado': estado})
+
+def serie(request, pk):
+    serie = get_object_or_404(Serie, pk = pk)
+    return render(request, 'series/serie.html', {'serie': serie})

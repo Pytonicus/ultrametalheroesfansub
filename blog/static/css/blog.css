@@ -7,7 +7,7 @@ body {
     font-size: 16px;
 }
 
-.container {
+.base {
     box-shadow: 0px 5px 10px #2F4858;
 }
 
@@ -128,8 +128,9 @@ textarea {
     border-color: #031926;
 }
 
-.poster {
-    max-height: 295px;
+.poster,
+.poster-max {
+    max-height: 400px;
     border-radius: 5px;
     box-shadow: 0px 5px 12px #031926;
 }
@@ -140,4 +141,9 @@ textarea {
 
 .serie {
     margin-bottom: 25px;
+}
+
+.captura {
+    max-height: 300px;
+    margin-bottom: 15px;
 }

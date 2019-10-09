@@ -3,8 +3,8 @@
 <br>
 <div class="listado row">
     {% for serie in series %}
-    <div class="serie col-md-3 text-center">
-        <a href="">
+    <div class="serie col-md-6 text-center">
+        <a href="{% url  'serie' serie.pk %}">
             <img class="poster" src="{{serie.poster.url}}" alt="{{serie.titulo}}">
             <p>{{serie.titulo}}</p>
         </a>

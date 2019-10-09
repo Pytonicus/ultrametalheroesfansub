@@ -1,0 +1,40 @@
+{% extends 'estructura.html' %} {% block contenido %}
+<h1 class="text-center">{{serie.titulo}}</h1>
+<div class="listado row">
+    <div class="serie col-md-12 text-center">
+        <img class="poster-max" src="{{serie.poster.url}}" alt="{{serie.titulo}}">
+    </div>
+</div>
+<div class="row container">
+    <div class="col-md-6 text-left">
+        <p><strong>Información</strong>:</p>
+        <ul>
+            <li><strong>Creador</strong>: {{ serie.creador }}</li>
+            <li><strong>Franquicia</strong>: {{ serie.franquicia }}</li>
+            <li><strong>Emisión</strong>: {{ serie.emision }}</li>
+            <li><strong>Episodios</strong>: {{ serie.episodios }}</li>
+        </ul>
+    </div>
+</div>
+<br>
+<div class="container row text-center">
+    <div class="col-md-12">
+        <p class="text-left"><strong>Capturas de pantalla: </strong></p>
+    </div>
+    <div class="col-md-6"><img class="captura" src="{{ serie.capturaUno.url }}" alt="Captura uno"></div>
+    <div class="col-md-6"><img class="captura" src="{{ serie.capturaDos.url }}" alt="Captura dos"></div>
+    <div class="col-md-6"><img class="captura" src="{{ serie.capturaTres.url }}" alt="Captura tres"></div>
+    <div class="col-md-6"><img class="captura" src="{{ serie.capturaCuatro.url }}" alt="Captura cuatro"></div>
+</div>
+<br>
+<div class="container row">
+    <div class="col-md-12 text-center">
+        <p class="text-left"><strong>Sipnosis</strong>:</p>
+        <p>{{ serie.sipnosis }}</p>
+    </div>
+    <div class="col-md-12 text-center">
+        <a href="{{ serie.enlace }}" class="btn btn-dark btn-lg">Ir al contenedor</a>
+    </div>
+</div>
+<br>
+<br> {% endblock %}
