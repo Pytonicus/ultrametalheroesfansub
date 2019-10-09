@@ -8,7 +8,8 @@
         <div class=" row captura text-center">
             <div class="col-md-2"></div>
             <div class="col-md-8">
-                <img src="{{entrada.imagen.url}}" alt="{{entrada.titulo}}">
+                {% if entrada.imagen %}
+                <img src="{{entrada.imagen.url}}" alt="{{entrada.titulo}}"> {% endif %}
             </div>
             <div class="col-md-2"></div>
         </div>
