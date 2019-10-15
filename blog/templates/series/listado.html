@@ -5,7 +5,7 @@
     {% for serie in series %}
     <div class="serie col-md-6 text-center">
         <a href="{% url  'serie' serie.pk %}">
-            <img class="poster" src="{{serie.poster.url}}" alt="{{serie.titulo}}">
+            <img class="poster" src="{{serie.poster}}" alt="{{serie.titulo}}">
             <p>{{serie.titulo}}</p>
         </a>
     </div>
