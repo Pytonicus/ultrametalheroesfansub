@@ -1,9 +1,12 @@
 from django.shortcuts import render, redirect
 from django.utils import timezone
-from .models import Entrada, Serie
+from .models import Entrada, Serie, Comentario
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.shortcuts import render, get_object_or_404
 from .forms import FormComentario
+from django.contrib.auth.models import User, Group
+from rest_framework import viewsets
+from blog.serializers import UserSerializer, GroupSerializer, EntradaSerializer, ComentarioSerializer, SerieSerializer
 
 def lista_entradas(request):
     entradas = Entrada.objects.all().order_by("-fecha")
@@ -52,3 +55,30 @@ def series_terminadas(request):
 def serie(request, pk):
     serie = get_object_or_404(Serie, pk = pk)
     return render(request, 'series/serie.html', {'serie': serie})
+
+class UserViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = User.objects.all().order_by('-date_joined')
+    serializer_class = UserSerializer
+
+
+class GroupViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = Group.objects.all()
+    serializer_class = GroupSerializer
+
+class EntradaViewSet(viewsets.ModelViewSet):
+    queryset = Entrada.objects.all()
+    serializer_class = EntradaSerializer
+
+class ComentarioViewSet(viewsets.ModelViewSet):
+    queryset = Comentario.objects.all()
+    serializer_class = ComentarioSerializer
+
+class SerieViewSet(viewsets.ModelViewSet):
+    queryset = Serie.objects.all()
+    serializer_class = SerieSerializer
